@@ -45,5 +45,4 @@ public class TaskEntity {
 
     @Column(name = "is_deleted")
     private Boolean isDeleted;
-
 }
