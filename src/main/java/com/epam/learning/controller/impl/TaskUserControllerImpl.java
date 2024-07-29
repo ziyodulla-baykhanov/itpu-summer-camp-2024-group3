@@ -2,6 +2,7 @@ package com.epam.learning.controller.impl;
 
 import com.epam.learning.controller.TaskUserController;
 import com.epam.learning.dto.TaskUserDto;
+import com.epam.learning.service.TaskUserService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,13 +16,13 @@ public class TaskUserControllerImpl implements TaskUserController {
     private final TaskUserService taskUserService;
 
     @Override
-    public ResponseEntity<String> createTask(TaskUserDto taskUserDto) {
+    public ResponseEntity<TaskUserDto> createTask(TaskUserDto taskUserDto) {
         taskUserDto.setId(null);
         return ResponseEntity.ok(taskUserService.createTask(taskUserDto));
     }
 
     @Override
-    public ResponseEntity<TaskUserDto> updateTask(Integer id, TaskUserDto taskDto) {
+    public ResponseEntity<TaskUserDto> updateTask(Integer id, TaskUserDto taskUserDto) {
         taskUserDto.setId(id);
         return ResponseEntity.ok(taskUserService.updateTask(id, taskUserDto));
     }
@@ -37,7 +38,7 @@ public class TaskUserControllerImpl implements TaskUserController {
     }
 
     @Override
-    public ResponseEntity<List<TaskUserDto>> getAllTaskByUserId(Integer id); {
+    public ResponseEntity<List<TaskUserDto>> getAllTaskByUserId(Integer id) {
         return ResponseEntity.ok(taskUserService.getAllTaskByUserId(id));
     }
 }

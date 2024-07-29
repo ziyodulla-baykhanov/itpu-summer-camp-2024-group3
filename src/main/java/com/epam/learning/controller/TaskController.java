@@ -16,7 +16,7 @@ public interface TaskController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     @ApiOperation("Create Task")
-    ResponseEntity<String> createTask(@RequestBody TaskDto taskDto);
+    ResponseEntity<TaskDto> createTask(@RequestBody TaskDto taskDto);
 
     @PutMapping("/{id}")
     @ApiOperation("Update Task")

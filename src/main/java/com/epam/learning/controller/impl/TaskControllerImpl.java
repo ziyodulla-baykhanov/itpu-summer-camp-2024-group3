@@ -16,7 +16,7 @@ public class TaskControllerImpl implements TaskController {
     private final TaskService taskService;
 
     @Override
-    public ResponseEntity<String> createTask(TaskDto taskDto) {
+    public ResponseEntity<TaskDto> createTask(TaskDto taskDto) {
         taskDto.setId(null);
         return ResponseEntity.ok(taskService.createTask(taskDto));
     }
