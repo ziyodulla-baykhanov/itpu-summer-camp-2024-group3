@@ -2,7 +2,6 @@ package com.epam.learning.controller.impl;
 
 import com.epam.learning.controller.TaskUserController;
 import com.epam.learning.dto.TaskUserDto;
-import com.epam.learning.service.TaskUserService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
