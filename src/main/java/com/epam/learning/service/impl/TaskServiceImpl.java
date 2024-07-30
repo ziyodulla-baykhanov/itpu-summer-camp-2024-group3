@@ -20,13 +20,10 @@ public class TaskServiceImpl implements TaskService {
     private final TaskRepository taskRepository;
 
     @Override
-    public String createTask(TaskDto taskDto) {
+    public TaskDto createTask(TaskDto taskDto) {
         TaskEntity taskEntity = taskMapper.dtoToEntity(taskDto);
-        taskEntity.setCreateDate(LocalDateTime.now());
-        taskEntity.setDeleteDate(null);
-        taskEntity.setIsDeleted(false);
-        taskRepository.save(taskEntity);
-        return "Task was created successfully";
+        TaskEntity savedTaskEntity = taskRepository.save(taskEntity);
+        return taskMapper.entityToDto(savedTaskEntity);
     }
 
     @Override
@@ -42,7 +39,7 @@ public class TaskServiceImpl implements TaskService {
     public String deleteTask(Integer id) {
         TaskEntity taskEntity = taskRepository.findByIdAndIsDeletedFalse(id)
                 .orElseThrow(() -> new TaskNotFoundException(id));
-        taskEntity.setIsDeleted(true);
+        taskEntity.setDeleted(true);
         taskEntity.setDeleteDate(LocalDateTime.now());
         taskRepository.save(taskEntity);
         return "Task was deleted successfully";
