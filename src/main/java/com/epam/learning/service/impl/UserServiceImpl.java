@@ -2,7 +2,7 @@ package com.epam.learning.service.impl;
 
 import com.epam.learning.dto.UserDto;
 import com.epam.learning.entity.UserEntity;
-import com.epam.learning.exeption.UserNotFoundException;
+import com.epam.learning.exception.UserNotFoundException;
 import com.epam.learning.mapper.UserMapper;
 import com.epam.learning.repository.UserRepository;
 import com.epam.learning.service.UserService;

@@ -2,7 +2,7 @@ package com.epam.learning.service.impl;
 
 import com.epam.learning.dto.TaskDto;
 import com.epam.learning.entity.TaskEntity;
-import com.epam.learning.exeption.TaskNotFoundException;
+import com.epam.learning.exception.TaskNotFoundException;
 import com.epam.learning.mapper.TaskMapper;
 import com.epam.learning.repository.TaskRepository;
 import com.epam.learning.service.TaskService;
