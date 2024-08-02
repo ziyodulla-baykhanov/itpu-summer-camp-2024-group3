@@ -1,4 +1,4 @@
-package com.epam.learning.exeption;
+package com.epam.learning.exception;
 
 public class UserNotFoundException extends  RuntimeException{
 
